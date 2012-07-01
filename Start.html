@@ -1,0 +1,45 @@
+﻿<body onkeydown="KeysHandlerDown(event);">
+
+<div style="width:1100px">
+    <div style="border: dotted; width:980px; height:250px; float:left;" >
+        <canvas id="battleField" width="980" height="250"></canvas>
+    </div>
+
+    <div style="border: dotted; width:40px; height:250px; float:left; margin-left:-3px;" >
+        <canvas id="powerBar" width="40" height="250"></canvas>
+    </div>
+    <div style="clear:both;"></div>
+
+
+    <div style="float: left">
+        <h3>Текущий выстрел</h3>
+        <span>Сила выстрела: </span><span id="shoot_power">N/A</span><br/>
+        <span>Угол выстрела: </span><span id="shoot_angle">N/A</span><br/>
+        <span>Дальность выстрела: </span><span id="shoot_length">N/A</span><br/>
+        <span>Высота выстрела: </span><span id="shoot_height">N/A</span><br/>
+        <h3>Общее</h3>
+        <span>Процент попаданий: </span><span id="hit_rate">0.00% (0 / 0)</span><br/>
+        <span>Всего очков: </span><span id="total_score">0</span><br/>
+    </div>
+    
+    <div style="float: left;">
+        <h3>Управление</h3>
+        <span>Угол наклона пушки: Стрелки клавиатуры</span><br/>
+        <span>Залп: Space / Пробел</span><br/>
+        <span>Очки начисляются в зависимости от дальности цели</span><br/>
+        <span>Расстояние до цели:</span>
+        <select id="distanceSelector" onchange="DistanceListHandle(value);">
+          <option value="1">Близко</option>
+          <option value="2">Умеренно</option>
+          <option value="3">Далеко</option>
+          <option value="0" selected>Случайно</option>
+        </select>
+        <br/>
+    </div>
+
+    <div style="clear:both;"></div>
+</div>
+
+<script src="cannon.js" type="text/javascript"></script>
+
+</body>
